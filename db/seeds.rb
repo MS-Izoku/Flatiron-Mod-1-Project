@@ -7,13 +7,13 @@ Selection.delete_all
      user = User.create(name: Faker::Name.name, favorite_genre: Faker::Music.genre)
  end
 
-10.times do |station|
+100.times do |station|
     station = Station.create(name: "#{Faker::Alphanumeric.alphanumeric 4}, the #{Faker::Verb.base.capitalize}",
      host:"DJ #{Faker::Name.first_name}", genre: Faker::Music.genre)
 end
 
 10.times do |selection|
-    selection = Selection.create(user_id:rand(1..10), station_id: rand(1..10))
+    selection = Selection.create(user_id:rand(1..10), station_id: rand(1..100))
 end
 
 
